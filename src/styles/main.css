@@ -43,4 +43,56 @@ form button:hover{
   background-color: white;
   color: black;
 }
+.weather-info{
+  width: 100%;
+  border: 1px solid white;
+  display: flex;
+  justify-content: space-between;
+}
+.weather-info .left-side{
+  display: flex;
+  justify-content: flex-start;
+  gap: 5px;
+}
+.left-side .cloudness-icon, .left-side .temp-value{
+  height: 100px;
+  width: 100px;
+  border: 1px solid red;
+}
+.left-side .temp-unit{
+  height: 100px;
+  width: 60px;
+  border: 1px solid orange;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 5px;
+  color: gray;
+}
+.temp-unit button{
+  background-color: transparent;
+  border: none;
+  color: gray;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.info-container{
+  height: 100px;
+  color: gray;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.weather-info .right-side{
+  height: 100px;
+  color: gray;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+}
+.right-side .city{
+  color: white;
+  font-size: 2rem;
+}
 

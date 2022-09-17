@@ -95,4 +95,39 @@ form button:hover{
   color: white;
   font-size: 2rem;
 }
-
+.weather-forecast{
+  height: 120px;
+  border: 1px solid white;
+  margin-top: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 5px;
+}
+.weather-forecast .card{
+  width: 100px;
+  height: 100%;
+  border: 1px solid green;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  color: white;
+}
+.card .weather-icon{
+  width: 80%;
+  height: 70%;
+  border: 1px solid blue;
+}
+.card .temp{
+  display: flex;
+  gap: 5px;
+}
+.temp .high-temp span{
+  color: white;
+  font-size: 0.9rem;
+}
+.temp .low-temp span{
+  color: gray;
+  font-size: 0.9rem;
+}

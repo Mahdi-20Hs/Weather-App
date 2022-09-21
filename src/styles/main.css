@@ -113,6 +113,8 @@ form button:hover{
   align-items: center;
   gap: 5px;
   color: white;
+  cursor: pointer;
+  transition-duration: 0.3s;
 }
 .card .weather-icon{
   width: 80%;

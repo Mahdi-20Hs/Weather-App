@@ -18,8 +18,16 @@ module.exports = {
         use: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        use: 'asset/resource',
+        test: /\.(png|svg|jpg|jpeg|gif|webp)$/i,
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+            outputPath: 'imgs/',
+            publicPath: 'imgs/',
+
+          },
+        },
       },
     ],
   },

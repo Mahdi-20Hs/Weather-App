@@ -6,9 +6,10 @@ const currentWeatherIcon = document.querySelector('.weather-icon-current');
 const weather = document.querySelector('.weather');
 const tempValue = document.querySelector('.temp-value');
 const celsiusBtn = document.querySelector('.celsius');
-const farhrenhietBtn = document.querySelector('.farhrenhiet');
+const farhrenhietBtn = document.querySelector('.farhrenheit');
 const humidity = document.querySelector('.humidity span');
 const wind = document.querySelector('.wind span');
+const windUnit = document.querySelector('.wind-unit');
 
 const city = document.querySelector('.city');
 const date = document.querySelector('.date');
@@ -26,6 +27,7 @@ export {
   farhrenhietBtn,
   humidity,
   wind,
+  windUnit,
   city,
   date,
   daysCards,

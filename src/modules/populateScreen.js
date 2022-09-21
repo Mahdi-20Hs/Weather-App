@@ -2,15 +2,11 @@ import {
   weather,
   currentWeatherIcon,
   tempValue,
-  celsiusBtn,
-  farhrenhietBtn,
   humidity,
   wind,
   city,
   date,
   daysCards,
-  clouds,
-  fewClouds,
 } from './DOM';
 
 function getFullDayName(shortcut) {

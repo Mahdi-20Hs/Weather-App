@@ -31,7 +31,7 @@ function CreateDayObj(dayData) {
   dayObj.min = Math.floor(dayData.temp.min);
   dayObj.max = Math.floor(dayData.temp.max);
   dayObj.humidity = Math.floor(dayData.humidity);
-  dayObj.wind = Math.floor(dayData.wind_speed);
+  dayObj.wind = Math.floor(dayData.wind_speed * 3.6);
   dayObj.weather = dayData.weather[0].description;
   return dayObj;
 }

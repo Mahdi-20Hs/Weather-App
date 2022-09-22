@@ -16,6 +16,7 @@ body{
   gap: 10px;
   padding: 20px;
   background-color: rgb(32, 32, 37);
+  background-size: cover;
 }
 form{
   width: 100%;
@@ -132,4 +133,13 @@ form button:hover{
 .temp .low-temp span{
   color: gray;
   font-size: 0.9rem;
+}
+.photo-citation{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 3px;
+  background-color: rgba(139, 139, 139, 0.479);
+  color: rgba(14, 14, 14, 0.89);
+  text-decoration: none;
 }

@@ -72,3 +72,8 @@ farhrenhietBtn.addEventListener('click', () => {
     windUnit.textContent = 'mph';
   }
 });
+window.onload = async function () {
+  searchTerm = 'London';
+  dailyWeatherData = await getData(searchTerm);
+  populateScreen(dailyWeatherData, dailyWeatherData[0], searchTerm);
+};

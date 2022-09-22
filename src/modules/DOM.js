@@ -15,8 +15,11 @@ const city = document.querySelector('.city');
 const date = document.querySelector('.date');
 const daysCards = document.querySelectorAll('.card');
 
-export {
+const body = document.querySelector('body');
+const photoCitation = document.querySelector('.photo-citation');
 
+export {
+  photoCitation,
   currentWeatherIcon,
   searchbar,
   searchBtn,
@@ -31,4 +34,5 @@ export {
   city,
   date,
   daysCards,
+  body,
 };

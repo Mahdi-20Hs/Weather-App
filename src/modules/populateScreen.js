@@ -34,35 +34,27 @@ function getFullDayName(shortcut) {
   }
   return fullDayName;
 }
+
+function setBodyImage(weatherCondition) {
+  body.style.backgroundImage = `url(${weatherCondition[0]})`;
+  photoCitation.textContent = weatherCondition[1];
+  photoCitation.href = weatherCondition[2];
+}
 function changeBodyImage(weatherCondition) {
   if (weatherCondition === 'clear sky') {
-    body.style.backgroundImage = `url(${sunny[0]})`;
-    photoCitation.textContent = sunny[1];
-    photoCitation.href = sunny[2];
+    setBodyImage(sunny);
   } else if (weatherCondition === 'few clouds') {
-    body.setAttribute('style', `background-image: url(${fewClouds[0]})`);
-    photoCitation.textContent = fewClouds[1];
-    photoCitation.href = fewClouds[2];
+    setBodyImage(fewClouds);
   } else if (weatherCondition.includes('clouds')) {
-    body.style.backgroundImage = `url(${cloudy[0]})`;
-    photoCitation.textContent = cloudy[1];
-    photoCitation.href = cloudy[2];
+    setBodyImage(cloudy);
   } else if (weatherCondition.includes('rain')) {
-    body.style.backgroundImage = `url(${rainy[0]})`;
-    photoCitation.textContent = rainy[1];
-    photoCitation.href = rainy[2];
+    setBodyImage(rainy);
   } else if (weatherCondition === 'thunderstorm') {
-    body.style.backgroundImage = `url(${thunderStorm[0]})`;
-    photoCitation.textContent = thunderStorm[1];
-    photoCitation.href = thunderStorm[2];
+    setBodyImage(thunderStorm);
   } else if (weatherCondition === 'snow') {
-    body.style.backgroundImage = `url(${snowy[0]})`;
-    photoCitation.textContent = snowy[1];
-    photoCitation.href = snowy[2];
+    setBodyImage(snowy);
   } else {
-    body.style.backgroundImage = `url(${misty[0]})`;
-    photoCitation.textContent = misty[1];
-    photoCitation.href = misty[2];
+    setBodyImage(misty);
   }
 }
 

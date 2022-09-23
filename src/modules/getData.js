@@ -10,16 +10,18 @@ async function getLocation(city) {
     const cityName = response.data.name;
     return { lat, lon, cityName };
   } catch (err) {
-    alert(`${err} from getLocation`);
+    alert('City doesn\'t exist');
     return undefined;
   }
 }
 function formatDate(date) {
   const formatedDate = fromUnixTime(date);
   let hours = formatedDate.getHours();
-  hours = (hours % 12) || 12;
   let mins = formatedDate.getMinutes();
+
+  hours = (hours % 12) || 12;
   mins = (mins > 0) || '00';
+
   const day = `${formatedDate}`.split(' ')[0];
   const amOrPm = (hours >= 12) ? 'PM' : 'AM';
   return `${day} ${hours}:${mins} ${amOrPm}`;
@@ -48,15 +50,10 @@ async function getData(city) {
   const { lat } = coords;
   const { lon } = coords;
 
-  try {
-    const response = await axios.get(`https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&exclude=minutely,hourly&units=metric&appid=f421a9f223bf59b3abbd7698f3e933d2`);
-    const daysArr = response.data.daily;
-    const dailyWeatherData = getDailyWeatherData(daysArr);
-    return dailyWeatherData;
-  } catch (err) {
-    alert(`${err} from getData`);
-    return undefined;
-  }
+  const response = await axios.get(`https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&exclude=minutely,hourly&units=metric&appid=f421a9f223bf59b3abbd7698f3e933d2`);
+  const daysArr = response.data.daily;
+  const dailyWeatherData = getDailyWeatherData(daysArr);
+  return dailyWeatherData;
 }
 
 export default getData;

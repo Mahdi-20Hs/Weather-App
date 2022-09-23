@@ -1,3 +1,19 @@
+import cloudyIcon from '../imgs/weather-cloudy.svg';
+import fewCloudsIcon from '../imgs/weather-partly-cloudy.svg';
+import sunnyIcon from '../imgs/weather-sunny.svg';
+import rainyIcon from '../imgs/weather-pouring.svg';
+import snowyIcon from '../imgs/weather-snowy-heavy.svg';
+import foggyIcon from '../imgs/weather-fog.svg';
+import thunderstormIcon from '../imgs/weather-lightning.svg';
+
+import cloudyImg from '../imgs/pexels-brett-sayles-3766107.jpg';
+import fewCloudsImg from '../imgs/pexels-breno-cardoso-8559062.jpg';
+import sunnyImg from '../imgs/pexels-pixabay-164196.jpg';
+import rainyImg from '../imgs/pexels-sami-aksu-9899126.jpg';
+import snowyImg from '../imgs/pexels-roy-post-760971.jpg';
+import foggyImg from '../imgs/pexels-eberhard-grossgasteiger-1367192.jpg';
+import thunderstormImg from '../imgs/pexels-yuvraj-salam-3536899.jpg';
+
 const searchbar = document.querySelector('.searchbar');
 const searchBtn = document.querySelector('.search-btn');
 const form = document.querySelector('form');
@@ -35,4 +51,18 @@ export {
   date,
   daysCards,
   body,
+  cloudyIcon,
+  fewCloudsIcon,
+  sunnyIcon,
+  snowyIcon,
+  rainyIcon,
+  thunderstormIcon,
+  foggyIcon,
+  cloudyImg,
+  fewCloudsImg,
+  sunnyImg,
+  snowyImg,
+  rainyImg,
+  thunderstormImg,
+  foggyImg,
 };

@@ -9,15 +9,29 @@ import {
   daysCards,
   body,
   photoCitation,
+  cloudyIcon,
+  fewCloudsIcon,
+  sunnyIcon,
+  snowyIcon,
+  rainyIcon,
+  thunderstormIcon,
+  foggyIcon,
+  cloudyImg,
+  fewCloudsImg,
+  sunnyImg,
+  snowyImg,
+  rainyImg,
+  thunderstormImg,
+  foggyImg,
 } from './DOM';
 
-const sunny = ['../imgs/pexels-pixabay-164196.jpg', 'Photo by Pixabay', 'https://www.pexels.com/photo/banaue-rice-terraces-164196/'];
-const fewClouds = ['../imgs/pexels-breno-cardoso-8559062.jpg', 'Photo by Breno Cardoso', 'https://www.pexels.com/photo/red-clouds-on-sky-8559062/'];
-const cloudy = ['../imgs/pexels-brett-sayles-3766107.jpg', 'Photo by Brett Sayles', 'https://www.pexels.com/photo/masses-of-dark-clouds-3766107/'];
-const rainy = ['../imgs/pexels-sami-aksu-9899126.jpg', 'Photo by Sami  Aksu', 'https://www.pexels.com/photo/glass-wet-with-rain-9899126/'];
-const thunderStorm = ['../imgs/pexels-yuvraj-salam-3536899.jpg', 'Photo by Yuvraj Salam', 'https://www.pexels.com/photo/lightning-over-trees-3536899/'];
-const snowy = ['../imgs/pexels-roy-post-760971.jpg', 'Photo by Roy Post', 'https://www.pexels.com/photo/photography-of-road-during-winter-season-760971/'];
-const misty = ['../imgs/pexels-eberhard-grossgasteiger-1367192.jpg', 'Photo by eberhard grossgasteiger', 'https://www.pexels.com/photo/photo-of-foggy-forest-1367192/'];
+const sunny = [sunnyImg, 'Photo by Pixabay', 'https://www.pexels.com/photo/banaue-rice-terraces-164196/'];
+const fewClouds = [fewCloudsImg, 'Photo by Breno Cardoso', 'https://www.pexels.com/photo/red-clouds-on-sky-8559062/'];
+const cloudy = [cloudyImg, 'Photo by Brett Sayles', 'https://www.pexels.com/photo/masses-of-dark-clouds-3766107/'];
+const rainy = [rainyImg, 'Photo by Sami  Aksu', 'https://www.pexels.com/photo/glass-wet-with-rain-9899126/'];
+const thunderStorm = [thunderstormImg, 'Photo by Yuvraj Salam', 'https://www.pexels.com/photo/lightning-over-trees-3536899/'];
+const snowy = [snowyImg, 'Photo by Roy Post', 'https://www.pexels.com/photo/photography-of-road-during-winter-season-760971/'];
+const foggy = [foggyImg, 'Photo by eberhard grossgasteiger', 'https://www.pexels.com/photo/photo-of-foggy-forest-1367192/'];
 
 function getFullDayName(shortcut) {
   let fullDayName;
@@ -54,25 +68,25 @@ function changeBodyImage(weatherCondition) {
   } else if (weatherCondition === 'snow') {
     setBodyImage(snowy);
   } else {
-    setBodyImage(misty);
+    setBodyImage(foggy);
   }
 }
 
 function getWeatherIcon(weatherCondition) {
   if (weatherCondition === 'clear sky') {
-    return '../imgs/weather-sunny.svg';
+    return sunnyIcon;
   } if (weatherCondition === 'few clouds') {
-    return '../imgs/weather-partly-cloudy.svg';
+    return fewCloudsIcon;
   } if (weatherCondition.includes('clouds')) {
-    return '../imgs/weather-cloudy.svg';
+    return cloudyIcon;
   } if (weatherCondition.includes('rain')) {
-    return '../imgs/weather-pouring.svg';
+    return rainyIcon;
   } if (weatherCondition === 'thunderstorm') {
-    return '../imgs/weather-lightning.svg';
+    return thunderstormIcon;
   } if (weatherCondition === 'snow') {
-    return '../imgs/weather-snowy-heavy.svg';
+    return snowyIcon;
   }
-  return '../imgs/weather-fog.svg';
+  return foggyIcon;
 }
 
 function displayCurrentWeather(currentWeatherData, cityName) {

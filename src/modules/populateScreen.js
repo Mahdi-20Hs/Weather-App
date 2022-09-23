@@ -11,7 +11,6 @@ import {
   photoCitation,
 } from './DOM';
 
-// complete getting the photos from pexels website//
 const sunny = ['../imgs/pexels-pixabay-164196.jpg', 'Photo by Pixabay', 'https://www.pexels.com/photo/banaue-rice-terraces-164196/'];
 const fewClouds = ['../imgs/pexels-breno-cardoso-8559062.jpg', 'Photo by Breno Cardoso', 'https://www.pexels.com/photo/red-clouds-on-sky-8559062/'];
 const cloudy = ['../imgs/pexels-brett-sayles-3766107.jpg', 'Photo by Brett Sayles', 'https://www.pexels.com/photo/masses-of-dark-clouds-3766107/'];
@@ -35,42 +34,52 @@ function getFullDayName(shortcut) {
   }
   return fullDayName;
 }
-
-function getWeatherIcon(weatherCondition) {
+function changeBodyImage(weatherCondition) {
   if (weatherCondition === 'clear sky') {
     body.style.backgroundImage = `url(${sunny[0]})`;
     photoCitation.textContent = sunny[1];
     photoCitation.href = sunny[2];
-    return '../imgs/weather-sunny.svg';
-  } if (weatherCondition === 'few clouds') {
-    body.style.backgroundImage = `url(${fewClouds[0]})`;
+  } else if (weatherCondition === 'few clouds') {
+    body.setAttribute('style', `background-image: url(${fewClouds[0]})`);
     photoCitation.textContent = fewClouds[1];
     photoCitation.href = fewClouds[2];
-    return '../imgs/weather-partly-cloudy.svg';
-  } if (weatherCondition.includes('clouds')) {
+  } else if (weatherCondition.includes('clouds')) {
     body.style.backgroundImage = `url(${cloudy[0]})`;
     photoCitation.textContent = cloudy[1];
     photoCitation.href = cloudy[2];
-    return '../imgs/weather-cloudy.svg';
-  } if (weatherCondition.includes('rain')) {
+  } else if (weatherCondition.includes('rain')) {
     body.style.backgroundImage = `url(${rainy[0]})`;
     photoCitation.textContent = rainy[1];
     photoCitation.href = rainy[2];
-    return '../imgs/weather-pouring.svg';
-  } if (weatherCondition === 'thunderstorm') {
+  } else if (weatherCondition === 'thunderstorm') {
     body.style.backgroundImage = `url(${thunderStorm[0]})`;
     photoCitation.textContent = thunderStorm[1];
     photoCitation.href = thunderStorm[2];
-    return '../imgs/weather-lightning.svg';
-  } if (weatherCondition === 'snow') {
+  } else if (weatherCondition === 'snow') {
     body.style.backgroundImage = `url(${snowy[0]})`;
     photoCitation.textContent = snowy[1];
     photoCitation.href = snowy[2];
+  } else {
+    body.style.backgroundImage = `url(${misty[0]})`;
+    photoCitation.textContent = misty[1];
+    photoCitation.href = misty[2];
+  }
+}
+
+function getWeatherIcon(weatherCondition) {
+  if (weatherCondition === 'clear sky') {
+    return '../imgs/weather-sunny.svg';
+  } if (weatherCondition === 'few clouds') {
+    return '../imgs/weather-partly-cloudy.svg';
+  } if (weatherCondition.includes('clouds')) {
+    return '../imgs/weather-cloudy.svg';
+  } if (weatherCondition.includes('rain')) {
+    return '../imgs/weather-pouring.svg';
+  } if (weatherCondition === 'thunderstorm') {
+    return '../imgs/weather-lightning.svg';
+  } if (weatherCondition === 'snow') {
     return '../imgs/weather-snowy-heavy.svg';
   }
-  body.style.backgroundImage = `url(${misty[0]})`;
-  photoCitation.textContent = misty[1];
-  photoCitation.href = misty[2];
   return '../imgs/weather-fog.svg';
 }
 
@@ -107,6 +116,7 @@ function populateForecastWeather(dailyWeatherData) {
 
 function populateScreen(dailyWeatherData, currentWeatherData, cityName) {
   displayCurrentWeather(currentWeatherData, cityName);
+  changeBodyImage(currentWeatherData.weather);
   populateForecastWeather(dailyWeatherData);
 }
 

@@ -18,6 +18,9 @@ form.addEventListener('submit', async (event) => {
   event.preventDefault();
   await submitForm();
   populateScreen(dailyWeatherData, dailyWeatherData[0], searchTerm);
+  daysCards.forEach((element) => {
+    element.classList.remove('clicked-card');
+  });
   [...daysCards][0].classList.add('clicked-card');
   console.log(dailyWeatherData);
 });
@@ -36,6 +39,8 @@ daysCards.forEach((card) => {
 celsiusBtn.addEventListener('click', () => {
   if (unit === 'f') {
     unit = 'c';
+    celsiusBtn.classList.add('activated-unit');
+    farhrenhietBtn.classList.remove('activated-unit');
     let index;
     dailyWeatherData.forEach((day) => {
       day.max = ((day.max - 32) * (5 / 9)).toFixed(0);
@@ -56,6 +61,8 @@ farhrenhietBtn.addEventListener('click', () => {
   if (unit === 'c') {
     unit = 'f';
     let index;
+    farhrenhietBtn.classList.add('activated-unit');
+    celsiusBtn.classList.remove('activated-unit');
     dailyWeatherData.forEach((day) => {
       day.max = ((day.max * (9 / 5)) + 32).toFixed(0);
       day.min = ((day.min * (9 / 5)) + 32).toFixed(0);
